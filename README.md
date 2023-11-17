@@ -14,3 +14,7 @@ allows numpad as mouse (must then be activated with shift numlock)
 >kbset
 
 Keyboard settup script
+
+> aliases
+
+self explaitory, usefull aliases I have
