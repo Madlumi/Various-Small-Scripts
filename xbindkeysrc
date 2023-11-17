@@ -1,0 +1,17 @@
+#mouse clicker
+"xdotool click 1"
+ alt+r
+"xdotool click 3"
+ alt+f
+"xdotool click 2"
+ alt+d
+
+#old windows like - screen rotation
+"xrandr -o right"
+   alt+shift+Up
+"xrandr -o left"
+   alt+shift+Down
+"xrandr -o normal"
+   alt+shift+Left
+"xrandr -o reverse"
+   alt+shift+Right
