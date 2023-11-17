@@ -1,0 +1,2 @@
+setxkbmap -option keypad:pointerkeys
+xkbset ma 30 10 35 10 2

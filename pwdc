@@ -1,0 +1,8 @@
+#copies current directory( + cd) to primary clipboard
+if [ $# -eq 0 ]
+  then
+pwd | sed -e "s/^/cd \"/" -e s/$/\"/g | xclip -selection primary
+else
+   echo "Usage: pwdc"
+   echo "copies current directory( + cd) to primary clipboard"
+fi

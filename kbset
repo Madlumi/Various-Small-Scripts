@@ -1,0 +1,7 @@
+#setup keyboard 
+#remap keys to their rightfull place
+xmodmap -e "keycode 54 = y"
+xmodmap -e "keycode 29 = c"
+
+#speed up keyboard
+xset r rate 200 50

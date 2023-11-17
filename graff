@@ -1,0 +1,24 @@
+#!/bin/sh
+#convert ä å ö to groff format
+#or reverse \[:a] \[oa] \[:o] to swedish
+r=false
+while getopts "rh" o; do
+    case "$o" in
+        r)
+            r=true
+            echo "$OPTARG"
+            ;;
+         h)
+            echo "Usage: graff [-r]everse file"
+		      exit;
+            ;;
+         esac
+done
+shift $(($OPTIND - 1))
+if $r; then
+   sed $1 -e "s/\\\\\[oa\]/å/g" -e "s/\\\\\[:a\]/ä/g" -e "s/\\\\\[:o\]/ö/g"
+else 
+   sed $1 -e "s/å/\\\[oa]/g" -e "s/ä/\\\[:a]/g" -e "s/ö/\\\[:o]/g"
+fi
+
+
