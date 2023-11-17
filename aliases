@@ -1,0 +1,23 @@
+#Media:
+alias music="cd ~music; ls"
+alias mpvr="mpv --volume=100 --loop-playlist --shuffle "
+alias mpvpl="mpv --volume=100 --loop-playlist "
+
+#file management:
+#First file, returns first file in directory, good for quick sorting
+alias fifi=' "$(ls -p | grep -v / | head -1)" '
+#like pwd but for file
+alias pwf="readlink -f "
+#Allows quickly scanning through videos
+alias mmpv="mpv --volume=100 --speed=3 --fullscreen=yes "
+#These need to be aliases to work with fifi
+alias mv="mv -v "
+alias rm="rm "
+alias cp="cp -v "
+
+#Others
+alias trans="trans -tl sv "
+alias clip="xclip -selection primary "
+alias lss='\ls'
+#brightness setting
+alias brig='sudo vim /sys/class/backlight/intel_backlight/brightness'
