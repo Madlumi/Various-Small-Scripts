@@ -1,0 +1,14 @@
+#!/bin/sh
+if [ $# -eq 0 ];then
+    echo "Usage: makeYtPlaylist FILE_WITH_URLS"
+exit;
+fi
+
+#lines of output
+#lines=$(grep $1 -e ".*youtube\.com\/watch.*" | sed s/^.*watch\?v=//g | sed s/\&t.*$//g | sed s/$/,/g | wc -l)
+
+#yt will accept max 50
+batch=50
+
+#get video id -> split into $batch sized sections -> format to playlist -> print to stdout
+grep $1 -e ".*youtube\.com\/watch.*" | sed s/^.*watch\?v=//g | sed s/\&t.*$//g | sed s/$/,/g | parallel --pipe -k -N $batch "echo \"http://www.youtube.com/watch_videos?video_ids=\";cat ;echo NEWLINE"  |  tr -d '\n' | sed s/NEWLINE/\\n\\n/g
