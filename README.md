@@ -24,3 +24,7 @@ self explaitory, usefull aliases I have
 Takes a file with youtbe video urls and converts them into a youtube playlist 
 
 *(Note: max size is 50 videos, so in the case file has more than that it will make multiple playlists)*
+
+> ytdlpWrapper savevidXXX
+
+Resonable default filenames and stuff
