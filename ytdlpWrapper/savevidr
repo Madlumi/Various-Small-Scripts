@@ -1,0 +1,3 @@
+res=$1
+url=$2
+yt-dlp -f "bv*[height<=?$res]+ba/best[height<=?$res]" --embed-thumbnail --write-sub --sub-lang en -o "~/saved/%(uploader)s-%(title)s[$res].%(ext)s" "$url"
