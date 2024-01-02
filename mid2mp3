@@ -1,0 +1,2 @@
+mkdir mp3
+ls | grep -i -E "*\.midi?$" | for i in $(cat) ; do fluidsynth -l -T raw -F - "$i" | twolame -b 256 -r - "$(sed -e 's/\.mid\(i\|\)$/\.mp3/gI' -e 's/^/mp3\//g'  <<< "$i")" ;done
